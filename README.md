@@ -7,5 +7,4 @@ a cpu and its functioning
 > and logging the data for easy inspection as csv in seperate files
 >
 > includes multiple py files
-> >main.py is the simulator
-> >initFiles.py initialises the ram  and other registers,buses
+> >main.py is the simulator<br>initFiles.py initialises the ram  and other registers,buses

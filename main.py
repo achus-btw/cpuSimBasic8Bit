@@ -2,6 +2,7 @@ import json
 from os import register_at_fork, stat
 from types import resolve_bases
 RAM={}
+simulationStepSize=5#5 is for completing entire commands... replace with 1 to see every microStep
 BUS=0b0;
 running=True
 MicroStep=5;
@@ -171,14 +172,16 @@ def printState():
     print(f"reg: {output}")
     print(f"microStep:{MicroStep}")
     print(f"ram: {list(map(hex, RAM))}")
+    print(f"output:{REGISTERS['op']}")
 
 
 def main():
     printState()
     while True:
-        checkLimits()
         input()
-        step()
+        for i in range(simulationStepSize):
+            step()
+            checkLimits()
         printState()
     
 if __name__ == "__main__":
